@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <!-- Meta tags for encoding, compatibility, and responsive design -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the web page -->
+    <title>Turtle</title>
+    <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Preconnect to Google Fonts for performance improvement -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Font Oswald for typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main drawing area containing the turtle image, canvas, and controls for interaction -->
+    <div id="drawing area">
+        <!-- Turtle image -->
+        <img id="tortoise" src="tortoise.png">
+        <!-- Canvas for drawing -->
+        <canvas id="canvas" width="600" height="600"></canvas><br>
+        <!-- Display of current state -->
+        <p id="current_state">Current State: </p>
+        <!-- Input field for commands -->
+        <input type="text" id="command">
+        <!-- Button to run the command -->
+        <button id="commandbutton">Run Command</button>
+        <!-- Display of command history -->
+        <p id="history">Text Commands History:</p>
+    </div>
+    
+    <!-- Section for additional UI controls like buttons and inputs for specific actions -->
+    <div id="buttons">
+        <!-- UI for pen up and down JavaScript functions -->
+        <div id="buttons2">
+            <button onclick="penup()">Pen Up</button>
+            <button onclick="pendown()">Pen Down</button>
+        </div>
+
+        <!-- UI for moving forward -->
+        <div>
+            <input type="number" id="forwardDistance" placeholder="Enter distance for forward">
+            <button onclick="forward(document.getElementById('forwardDistance').value)">Forward</button>
+        </div>
+        
+        <!-- UI for turning -->
+        <div>
+            <input type="number" id="turnAngle" placeholder="Enter angle for turn">
+            <button onclick="turn(document.getElementById('turnAngle').value)">Turn</button>
+        </div>
+        
+        <!-- UI for drawing a polygon -->
+        <div>
+            <input type="number" id="polygonSides" placeholder="Number of sides">
+            <input type="number" id="polygonLength" placeholder="Length of each side">
+            <button onclick="polygon(document.getElementById('polygonSides').value, document.getElementById('polygonLength').value)">Draw Polygon</button>
+        </div>
+        <!-- UI for drawing a complete graph -->
+        <div>
+            <input type="number" id="graphSides" placeholder="Number of sides">
+            <input type="number" id="graphLength" placeholder="Length of each side">
+            <button onclick="graph(document.getElementById('graphSides').value, document.getElementById('graphLength').value)">Draw Complete graph</button>
+        </div>
+        
+        <!-- UI for drawing a Koch curve -->
+        <div>
+            <input type="number" id="kochEdges" placeholder="Number of edges">
+            <input type="number" id="kochDistance" placeholder="Distance">
+            <input type="number" id="kochLimit" placeholder="Limit">
+            <button onclick="koch2(document.getElementById('kochEdges').value, document.getElementById('kochDistance').value, document.getElementById('kochLimit').value)">Draw Koch Curve</button>
+        </div>
+
+        <!-- UI for drawing a Sierpinski triangle -->
+        <div>
+            <input type="number" id="sierpinskiDistance" placeholder="Distance">
+            <input type="number" id="sierpinskiLimit" placeholder="Limit">
+            <button onclick="sierpinski_triangle(document.getElementById('sierpinskiDistance').value, document.getElementById('sierpinskiLimit').value)">Draw Sierpinski Triangle</button>
+        </div>
+        <!-- Button to reset the canvas -->
+        <button id='reset' onclick="resetCanvas()">Reset Canvas</button>
+        <!-- Button to show the commands list modal -->
+        <button id="myBtn">Commands list</button>
+
+        <!-- Modal for displaying the commands list -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <!-- Detailed explanation of each command available -->
+                <p><strong>Pen Up:</strong><br>Stops the drawing line, allowing the turtle to move without drawing a trail.<br>Command Syntax: pen_up</p>
+                <p><strong>Pen Down:</strong><br>Starts or resumes drawing as the turtle moves.<br>Command Syntax: pen_down</p>
+                <p><strong>Forward:</strong><br>Moves the turtle forward by the specified distance.<br>Command Syntax: forward (distance) </p>
+                <p><strong>Turn:</strong><br>Rotates the turtle by a specified angle.<br>Command Syntax: turn (angle) </p>
+                <p><strong>Draw Polygon:</strong><br>Draws a polygon with a specified number of sides and side length.<br>Command Syntax: polygon (number of edges)</p>
+                <p><strong>Draw Complete Graph:</strong><br>Creates a complete graph with specified number of edges and length<br>Command Syntax: graph (number of edges) (length of edge)</p>
+                <p><strong>Draw Koch Curve:</strong><br>Draws a Koch fractal curve based on the number of edges, distance, and limit.<br>Command Syntax: koch (number of edges) (length of edge) (limit)</p>
+                <p><strong>Draw Sierpinski Triangle:</strong><br>Creates a Sierpinski Triangle fractal to the specified limit.<br>Command Syntax: sierpinski (length of edge) (limit)</p>
+                <p><strong>Reset canvas:</strong><br>Resets the canvas to its default state<br>Command Syntax: reset</p>
+            </div>
+        </div>
+    </div>
+    <!-- Link to the external JavaScript file for functionality -->
+    <script src="tortoise.js"></script>
+</body>
+</html>

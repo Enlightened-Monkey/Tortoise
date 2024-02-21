@@ -1,0 +1,130 @@
+/* Sets the default font, background color, and typography settings for the entire webpage. */
+body {
+    font-family: "Oswald", sans-serif; 
+    font-optical-sizing: auto; 
+    font-weight: 600; 
+    font-style: normal; 
+    background-color: rgb(233, 235, 204); 
+}
+
+/* Styles the canvas element with a solid border and rounded corners. */
+canvas {
+    border: 5px solid rgb(103, 130, 38); 
+    border-radius: 15px; 
+}
+
+/* General button styling, including background color, border, and padding. */
+button {
+    margin-right: 10px; 
+    margin-bottom: 10px; 
+    background-color: rgb(103, 130, 38); 
+    border: none; 
+    border-radius: 5px; 
+    color: white; 
+    padding: 5px 5px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.1s; /* Animates background color and press-down effect. */
+}
+
+/* Darkens the button on hover. */
+button:hover {
+    background-color: #076b1b; 
+}
+
+/* Creates a pressed button effect on active state. */
+button:active {
+    transform: translateY(2px); /* Moves the button down slightly when clicked. */
+}
+
+/* Customizes the reset button with a distinct background color. */
+#reset {
+    background-color: rgb(207, 26, 26);
+}
+/* Darkens the reset button on hover. */
+#reset:hover {
+    background-color: rgb(152, 9, 30); 
+}
+
+/* Centers the content of the body and aligns items at the start. */
+body {
+    display: flex; /* Uses flexbox for layout. */
+    justify-content: center; 
+    align-items: flex-start; /* Aligns items to the top. */
+    padding-top: 20px; 
+}
+
+/* Styles the drawing area, including layout and spacing. */
+#drawing_area {
+    flex: 1; /* Allows the drawing area to grow and fill available space. */
+    display: flex; /* Uses flexbox for layout. */
+    flex-direction: column; /* Stacks children vertically. */
+    align-items: center; 
+    margin-right: 20px; 
+}
+
+/* Styles for the buttons container, including layout and alignment. */
+#buttons {
+    margin-left: 2%; 
+    flex: 1; /* Allows the button area to grow. */
+    display: flex; /* Uses flexbox for layout. */
+    flex-direction: column; /* Stacks buttons vertically. */
+    align-items: flex-start; /* Aligns buttons to the left. */
+}
+
+/* Styles for input elements, including padding and margins. */
+input {
+    padding: 8px 10px; 
+    margin: 8px 0; 
+    box-sizing: border-box; 
+}
+
+/* Centers the text within the #current_state element. */
+#current_state {
+    text-align: center; 
+}
+
+/* Positions and styles the tortoise sprite. */
+#tortoise {
+    position: absolute; 
+    height: 30px; 
+    width: 30px;
+    opacity: 80%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #f2ffd0;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
